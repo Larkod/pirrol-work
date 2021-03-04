@@ -1,4 +1,563 @@
 @import config
 
-// CUSTOM USER STYLES & IMPORTS
+body, ul
+  margin: 0
+  padding: 0
 
+.container
+  width: 1200px
+  margin: 0 auto
+  padding: 0
+
+.header
+  position: fixed
+  top: 0
+  width: 100vw
+  z-index: 150
+  background: rgba(233,233,233,0.8)
+  .container
+    height: 50px
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__nav-list
+    display: flex
+  &__nav-item
+    display: block
+    padding: 0 15px
+    text-transform: uppercase
+    position: relative
+    font-size: 12px
+    transition: 0.3s
+    color: #1d1d1d
+    font-weight: 600
+    &::before
+      content: ''
+      position: absolute
+      top: 30px
+      background: #4ad2cd
+      height: 4px
+      transition: 0.3s
+      width: 0%
+      left: 50%
+    &:hover
+      cursor: pointer
+      color: #4ad2cd
+      &::before
+        width: 100%
+        left: 0
+  &__nav-item.active
+    cursor: pointer
+    color: #4ad2cd
+    &::before
+      width: 100%
+      left: 0
+  &__logo
+    width: 30px
+    height: 30px
+    &-img
+      max-width: 100%
+      max-height: 100%
+  &__mobile-bar
+    display: none
+
+.first-screen
+  padding-top: 50px
+  background: none
+  position: relative
+  &__block
+    margin-left: auto
+    text-align: left
+    max-width: 500px
+    padding: 170px 0
+  &__title
+    font-size: 38px
+    color: #1d1d1d
+    padding-bottom: 40px
+  &__text
+    font-size: 18px
+    color: #787878
+  &__button
+    width: 180px
+    height: 50px
+    background: #39b4af
+    text-align: center
+    color: #fff
+    font-size: 12px
+    border: none
+    text-transform: uppercase
+  &__bgBox
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    z-index: -1
+    left: 0
+  &__bgBox-image
+    width: 100%
+    height: 100%
+    object-fit: cover
+    opacity: 0.1
+
+.about
+  padding: 100px 0
+  text-align: center
+  &__info
+    margin: 0 auto
+    max-width: 620px
+    &__title
+      color: #191919
+      font-weight: 100
+      font-size: 30px
+    &__text
+      font-size: 16px
+      color: #787878
+    &__sing
+      margin: 30px 0
+
+.skills
+  position: relative
+  background: #f8f9f9
+  &__bg-box
+    position: absolute
+    left: 50%
+    width: 50%
+    height: 100%
+    background: #e9e9e9
+    top: 0
+  &__progress-block
+    padding: 100px 0
+    max-width: 500px
+  &__title
+    font-size: 30px
+    color: #171717
+  &__progress-item
+    width: 100%
+  &__indicator-label
+    font-size: 12px
+    font-weight: 600
+    text-transform: uppercase
+  &__progress-bar
+    margin: 10px 0
+    background: #d8d8d8
+    width: 100%
+    height: 5px
+    display: block
+  &__progress
+    background: #84e1de
+    height: 5px
+    &_p75
+      width: 75%
+    &_p90
+      width: 90%
+    &_p65
+      width: 65%
+  &__bg-box-image
+    width: 100%
+    height: 100%
+    background: #000 
+    object-fit: cover
+    object-position: top
+
+.statistics
+  background: #10c9c3
+  &__row
+    display: flex
+    justify-content: space-between
+    width: 100%
+    height: 240px
+    align-items: center
+    flex-wrap: wrap
+  &__item
+    display: grid 
+    align-content: baseline
+    grid-template-rows: 25px
+    align-items: center
+    grid-template-columns: auto
+    grid-column-gap: 10px
+    color: #fff
+    flex: 25%
+    min-width: 300px
+  &__icon
+    margin-left: auto
+    grid-row: 1 / span 2
+  &__count
+    grid-column: 2
+    grid-row: 1
+    font-size: 18px
+  &__indicator-label
+    grid-column: 2
+    grid-row: 2
+    font-size: 12px
+    text-transform: uppercase
+
+.works
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    flex-wrap: wrap
+  &__item
+    flex: 25%
+    height: 300px
+    min-width: 300px
+    position: relative
+    overflow: hidden
+    background: #838383
+    &::before
+      content: ''
+      position: absolute
+      background-image: url('../images/look.png')
+      width: 100%
+      height: 100%
+      left: 0
+      z-index: 5
+      opacity: 0
+      top: 0
+      transition: 0.3s
+      cursor: pointer
+      background-position: center center
+      background-size: cover
+    &:hover
+      .works__image
+        transform: scale(1.1)
+      &::before
+        opacity: 1
+  &__item:nth-child(2n)
+    background: #ddd
+  &__image
+    width: 100%
+    height: 300px
+    transition: 0.3s
+    object-fit: cover
+  &__load-more
+    width: 100%
+    height: 100px
+    background: #f5f5f5
+    text-align: center
+  &__load-more-button
+    background: none
+    border: none
+    width: 100%
+    height: 100%
+    text-align: center
+    text-transform: uppercase
+    font-size: 12px
+    color: #8e8e8e
+    transition: 0.3s
+    &:hover
+      transform: scale(1.1)
+      color: #333
+      
+.work-progress
+  margin: 100px 0
+  &__info
+    max-width: 520px
+    margin: 0 auto
+    margin-bottom: 50px
+    text-align: center
+  &__title
+    font-size: 30px
+    color: #191919
+  &__text
+    font-size: 16px
+    color: #787878
+  &__video
+    width: 100%
+    height: 600px
+    background: #e9e9e9
+    cursor: pointer
+    position: relative
+    &::before
+      content: ''
+      background-image: url('../images/play.png')
+      width: 110px
+      height: 110px
+      left: calc( 50% - 55px )
+      top: calc( 50% - 55px )
+      position: absolute
+      z-index: 5
+      transition: 0.3s
+    &:hover
+      &::before
+        transform: scale(1.1)
+  &__videoPreview
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 3
+  &__videoPreview-image
+    width: 100%
+    height: 100%
+    object-fit: cover
+    opacity: 0.3
+
+.services
+  background: #f5f5f5
+  padding: 100px 0
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+  &__item
+    flex: 25%
+    text-align: center
+    min-width: 300px
+    padding: 0 30px
+    padding-top: 50px
+
+  &__title
+    text-transform: uppercase
+    color: #191919
+    font-size: 12px
+    padding-top: 30px
+  &__text
+    color: #787878
+    font-size: 16px
+    padding-top: 15px
+  &__image
+    max-width: 100%
+    max-height: 100%
+
+.phrases
+  background: #10c9c3
+  padding: 60px 0
+  &__radio
+    position: absolute
+    opacity: 0
+    left: -100vw 
+  &__slider
+    width: 800px
+    margin: 0 auto
+  &__slide
+    max-width: 800px
+    margin: 0 auto
+    text-align: center
+    padding: 100px 0
+    opacity: 0
+    transition: 0.3s    
+  &__text
+    font-size: 24px
+    text-align: center
+    color: #fff
+  &__author
+    color: #fff
+    font-size: 12px
+  .slick-active
+    .phrases__slide
+      opacity: 1
+  .slick-dots
+    li
+      width: 10px
+      height: 10px
+      background: #9de4e2
+      border-radius: 50%
+      cursor: pointer
+      transition: 0.5s
+      margin: 0 5px
+      button
+        &::before
+          color: #fff
+    .slick-active
+      width: 15px
+      height: 15px
+      background: #fff
+  
+.clients
+  padding: 60px 0
+  width: 100%
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    flex-wrap: wrap
+  &__logo
+    max-width: 100%
+    max-height: 100%
+  &__item
+    flex: 20%
+    text-align: center
+    min-width: 240px
+    margin: 20px 0
+
+.contact-form
+  width: 100%
+  padding: 100px 0
+  background: #f5f5f5
+  &__title
+    font-size: 30px
+    color: #1d1d1d
+    padding-bottom: 40px
+    text-align: center
+    font-size: 30px
+  &__text
+    text-align: center
+    max-width: 540px
+    margin: 0 auto
+    color: #787878
+    font-size: 16px
+    padding-bottom: 40px
+  &__form
+    max-width: 540px
+    width: 100%
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  &__input
+    width: 100%
+    border: none
+    min-height: 50px
+    color: #787878
+    margin-bottom: 30px
+    font-size: 15px
+    background: #fff
+    padding: 20px
+  &__input-name 
+    width: 48%
+  &__input-mail
+    width: 48%
+  &__submit
+    background: #10c9c3
+    color: #fff
+    text-transform: uppercase
+    width: 180px
+    height: 55px
+    margin: 0 auto
+    border: none
+    font-size: 12px
+    transition: 0.3s
+    &:hover
+      transform: scale(1.1)
+
+.footer
+  width: 100%
+  padding: 100px 0
+  background: #141414
+  color: #fff
+  a
+    cursor: pointer
+    text-decoration: none
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+  &__studio-name
+    font-size: 18px
+  &__studio-desc
+    font-size: 15px
+    color: #bcbcbc
+  &__info
+    max-width: 250px
+  &__contact
+    min-width: 170px
+  &__mail
+    font-size: 15px
+    min-width: 170px
+    color: #bcbcbc
+    display: block
+  &__phone
+    display: block
+    min-width: 170px
+    color: #bcbcbc
+  &__nav-menu
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 30px
+  &__nav-item
+    color: #bcbcbc
+    display: block
+  &__social-link-list
+  &__social-link
+    display: block
+    color: #bcbcbc
+
+@media (max-width: 1200px) 
+  .container
+    width: 100vw
+    padding: 0 20px
+  .phrases
+    &__slider
+      width: 100% 
+  .skills
+    &__progress-block
+      max-width: 45vw
+
+@media (max-width: 720px)
+  .header
+    &__nav
+    &__nav-list
+      height: auto
+      position: absolute
+      top: 50px
+      left: 0
+      flex-wrap: wrap
+      width: 100vw
+      display: block
+    &__mobile-bar-line
+      height: 3px
+      width: 30px
+      margin-top: 5px
+      background: #000
+      transition: 0.3s
+    &__nav-item
+      width: 100%
+      height: 0
+      padding: 0
+      transition: 0.3s
+      overflow: hidden
+      background: #d2d2d2
+      text-align: center
+      position: relative
+      &::before
+        top: 90%
+      &:nth-child(2n)
+        background: #cecdcd
+        box-shadow: 10px 1px 1px #000
+    &__mobile-bar
+      display: block
+    &__mobile-bar.active
+      .header__mobile-bar-line
+        &:nth-child(1n)
+          transform: rotate(45deg)
+          margin-bottom: -8px
+        &:nth-child(2n)
+          transform: rotate(-45deg)
+        &:nth-child(3n)
+          margin-left: -30px
+          opacity: 0
+          transform: rotate(0deg)
+    &__nav-list.active
+      .header__nav-item
+        height: 50px
+        padding: 16px
+  .statistics
+    &__item
+      min-width: 150px
+  .footer
+    &__row
+      flex-wrap: wrap
+
+@media (max-width: 600px) 
+  .container
+    padding: 0 10px
+  .skills
+    background: none
+    &__progress-block
+      width: 330px
+      max-width: 100vw
+      margin: 0 auto
+    &__bg-box
+      left: 0
+      width: 100vw
+      opacity: 0.1
+  .contact-form
+    &__input-name
+      width: 100%
+    &__input-mail
+      width: 100%

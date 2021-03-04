@@ -1,0 +1,187 @@
+@import config
+
+.container
+  width: 1180px
+  margin: 0 auto
+
+header
+  width: 100vw
+  height: 60px
+  padding-top: 35px
+  z-index: 5
+  position: relative
+  .container
+    display: flex
+    justify-content: space-between
+    nav
+      a
+        text-transform: uppercase
+        margin-right: 30px
+        color: #191919
+        font-family: Montserrat medium 
+        &:hover
+          color: #62d3cf
+          text-decoration: none
+
+section#main_screen
+  position: relative
+  height: 660px
+  width: 100vw
+  margin-top: -60px
+  overflow: hidden
+  padding-top: 235px
+  background: linear-gradient(#e9e9e9, #e9e9e9)
+  content 
+    width: 500px
+    display: block
+    float: right 
+    h1
+      font-size: 38px
+      font-family: Montserrat medium
+      color: #1d1d1d
+    p
+      font-size: 18px
+      font-family: Nunito
+      color: #787878
+    button
+      width: 180px
+      height: 50px
+      border: none
+      background: #10c9c3
+      color: #fff
+      font-size: 12px
+      text-transform: uppercase
+
+section#about_us
+  position: relative
+  height: 420px
+  padding-top: 100px
+  width: 100vw
+  background: #fff
+  .container
+    content
+      text-align: center
+      width: 620px
+      display: block
+      margin: 0 auto
+      h1
+        font-size: 30px
+        color: #191919
+        font-family: Montserrat medium
+      p
+        font-size: 16px
+        color: #787878
+        font-family: Nunito
+
+section#progressSkill
+  height: 570px
+  padding-top: 160px
+  width: 100vw  
+  position: relative
+  background: #f8f9f9
+  .vode_div
+    position: absolute
+    background: #e9e9e9
+    width: 50%
+    top: 0
+    height: 100%
+    right: 0
+  content
+    width: 500px 
+    
+    height: 100%
+    display: block  
+    h1
+      font-size: 30px
+      font-family: Montserrat medium
+    .progress_bar
+      margin-top: 40px
+      span
+        font-size: 12px
+        font-family: Montserrat medium
+        font-weight: 700
+      .full_bar
+        margin-top: 20px
+        width: 100% 
+        height: 3px 
+        background: #d8d8d8
+        .progress
+          width: 50%  
+          height: 3px     
+          background: #10c9c3
+
+section#advans
+  width: 100vw
+  height: 240px
+  padding-top: 100px
+  background: #10c9c3
+  content 
+    display: flex
+    width: 100%
+    justify-content: space-between
+    .advans_item
+      color: #fff
+      padding-left: 70px
+      position: relative
+      img
+        position: absolute
+        top: 5px
+        left: 0
+      h2
+        font-size: 18px
+        line-height: 20px
+        padding: 0
+      span
+        font-size: 12px
+        text-transform: uppercase
+
+section#portfolio
+  width: 100vw  
+  height: 600px 
+  .port_list
+    display: flex
+    flex-wrap: wrap
+    width: 100% 
+    .port_item
+      width: 25%    
+      height: 300px
+      position: relative
+      overflow: hidden
+      img
+        min-width: 100%
+        transition: 0.3s
+      &::before
+        content: ''
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background: center url('../images/port_look.png')
+        cursor: pointer
+        z-index: 10
+        opacity: 0
+        transition: 0.5s
+      &:hover
+        &::before
+          opacity: 0.5
+        img
+          transform: scale(1.05)
+  .load_more
+    height: 100px
+    background: #f5f5f5
+    text-align: center
+    width: 100%
+    padding-top: 35px
+    cursor: pointer
+    transition: 0.3s
+    span
+      text-transform: uppercase
+      color: #8e8e8e
+      font-family: Montserrat medium  
+      font-size: 12px
+      transition: 0.3s    
+    &:hover
+      background: #e2e2e2
+      span
+        color: #343434

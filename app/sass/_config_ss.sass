@@ -19,29 +19,6 @@ $gutter: $grid-gutter-width
 
 // FONTS LOAD SECTION
 
-@import '../libs/slick/slick.css'
-@import '../libs/slick/slick-theme.css'
-
-@font-face
-    font-family: "DIN"
-    src : url("../fonts/dincondensedc.otf")
-
-@font-face
-    font-family: "Tornado"
-    src : url("../fonts/tornadomediumc.otf")
-
-@font-face
-    font-family: "PTSerif"
-    src : url("../fonts/PTSerif-Regular.ttf")
-
-@font-face
-    font-family: "PTSans"
-    src : url("../fonts/PTSans-Regular.ttf")
-
-@font-face
-    font-family: "PTSansBold"
-    src : url("../fonts/PTSans-Bold.ttf")
-
 @mixin font($fname, $fstyle, $fweight, $furl)
 	@font-face
 		font-family: $fname
@@ -56,7 +33,6 @@ $gutter: $grid-gutter-width
 
 @include font('Montserrat', medium, 500, '../fonts/Montserrat-Medium.ttf')
 @include font('Nunito', medium, 500, '../fonts/NunitoSans-Regular.ttf')
-
 
 // GENERAL DOCUMENT STYLES
 
